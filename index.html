@@ -120,7 +120,7 @@
       <button onclick="generateEmail()">임시 이메일 생성</button>
       <div id="email"></div>
       <h3>받은 메일</h3>
-      <div id="mail-list"></div>
+      <div id="mail-list">메일을 불러오는 중...</div>
       <div id="mail-content"></div>
     </div>
   </div>
@@ -242,7 +242,7 @@
         listEl.innerHTML = "";
         savedMails = [];
 
-        if (mails.length === 0) {
+        if (!mails || mails.length === 0) {
           listEl.innerText = "받은 메일이 없습니다.";
           return;
         }
